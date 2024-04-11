@@ -8,10 +8,6 @@ die() {
 	exit 1
 }
 
-prompt() {
-	echo -n "$1 [$2]: "
-}
-
 usage="
 ** Docker CertBot **
   Show       - Show Account and Certificate Details
@@ -68,7 +64,7 @@ create() {
 }
 
 renew() {
-	checkAccountRegistered "Create Certificate"
+	checkAccountRegistered "Renew Certificates"
 	if [ "$#" = 1 ]
 	then
 		echoRun renew --cert-name "$1"
